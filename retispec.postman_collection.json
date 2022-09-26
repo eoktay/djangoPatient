@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "cd869b8d-b142-4efb-bcf7-b5e577278e46",
+		"name": "retispec",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23267462"
+	},
+	"item": [
+		{
+			"name": "patient",
+			"item": [
+				{
+					"name": "Get All Patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/patients",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Patient Instance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/patients/6",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"patients",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Patients by First Name  Plus Last Name. Lookup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/patients?first_name=Erden&last_name=Oktay",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"patients"
+							],
+							"query": [
+								{
+									"key": "first_name",
+									"value": "Erden"
+								},
+								{
+									"key": "last_name",
+									"value": "Oktay"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Single Patient  Instance .",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/patients/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"patients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register New Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Erden\",\n    \"last_name\": \"Oktay\",\n    \"dob\": \"2022-09-21\",\n    \"sex\": \"Male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/patients",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "acquisition",
+			"item": [
+				{
+					"name": "Get All Acquisition",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/acquisition",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"acquisition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Acquisition Instance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/acquisition/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"acquisition",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Acquisitio With patient ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/acquisition?patient_id=2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"acquisition"
+							],
+							"query": [
+								{
+									"key": "patient_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Single Acquisition  Instance",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/acquisition/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"acquisition",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register New Acquisition",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "eye",
+									"value": "left",
+									"type": "text"
+								},
+								{
+									"key": "patient",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "site_name",
+									"value": "abc",
+									"type": "text"
+								},
+								{
+									"key": "date_taken",
+									"value": "2021-05-24",
+									"type": "text"
+								},
+								{
+									"key": "operator_name",
+									"value": "Abc",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/erden/Downloads/receipt.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/acquisition",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"acquisition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download An Image With Acquisition ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Erden\",\n    \"last_name\": \"Oktay\",\n    \"dob\": \"2022-09-21\",\n    \"sex\": \"Male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/image/download?id=3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"image",
+								"download"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
